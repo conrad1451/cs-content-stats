@@ -16,9 +16,6 @@ type Props = {
 };
 
 const ReactWordCloudApp = (props: Props) => {
-  // const sourceToParse =
-  let sourceToParse =
-    '[{"text":"dance","value":2},{"text":"never","value":4},{"text":"this","value":2},{"text":"that","value":2}]';
   // const parseStringifiedDataProof = JSON.parse(JSON.stringify(altWords));
   //   let parseStringifiedDataProof = JSON.parse(JSON.stringify(altWords));
   //   let parseStringifiedDataProof = JSON.parse(JSON.stringify(props.words));

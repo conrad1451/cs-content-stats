@@ -2,9 +2,9 @@
 // [1]: https://stackoverflow.com/questions/72584569/property-results-does-not-exist-on-type-axiosresponseany-any-with-axios
 // [2]: https://www.squash.io/passing-parameters-to-components-in-reactjs-with-typescript/
 
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 // import ReactWordcloud from "react-wordcloud";
-import axios from "axios";
+// import axios from "axios";
 
 import ReactWordCloudApp from "./WordCloud.tsx";
 import CSNotionPages from "./apis/CSNotionPages.tsx";
@@ -35,12 +35,12 @@ import theWords from "./theWords";
 
 function App() {
   // const [count, setCount] = useState(0);
-  const [myObj, setMyObj] = useState({});
-  useEffect(() => {
-    axios.get(`https://notion-cs-content.onrender.com/users`).then((res) => {
-      setMyObj(res);
-    });
-  }, []);
+  // const [myObj, setMyObj] = useState({});
+  // useEffect(() => {
+  //   axios.get(`https://notion-cs-content.onrender.com/users`).then((res) => {
+  //     setMyObj(res);
+  //   });
+  // }, []);
 
   return (
     <>
