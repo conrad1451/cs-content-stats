@@ -15,13 +15,11 @@ const AxiosOutput = () => {
   const [pages, setPages] = useState(Array<Page>);
   useEffect(() => {
     // axios.get(databaseId).then((res) => {
-    axios
-      .get("https://notion-cs-content.onrender.com/")
-      .then((res) => {
-        const broski = res.data;
-        setPages(broski);
-      })
-      .then(console.log(broski));
+    axios.get("https://notion-cs-content.onrender.com/").then((res) => {
+      const theData = res.data;
+      setPages(theData);
+      console.log(pages);
+    });
   }, []);
 
   return (
@@ -32,8 +30,8 @@ const AxiosOutput = () => {
           <p>
             {page.tags.map((tag) => (
               <>
-                <text>tag</text>
-                <text> </text>
+                <text>{tag}</text>
+                <text> ___ </text>
               </>
             ))}
           </p>
