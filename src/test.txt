@@ -1,0 +1,82 @@
+// sources:
+// [1]: https://stackoverflow.com/questions/72584569/property-results-does-not-exist-on-type-axiosresponseany-any-with-axios
+
+import { useState } from "react";
+import ReactWordcloud from "react-wordcloud";
+import axios from "axios";
+
+const { data } = await axios.get(
+  `https://notion-cs-content.onrender.com/users`
+);
+
+// const axios = require('axios');
+
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+
+import altWords from "./altWords";
+import theWords from "./theWords";
+
+const broFunc = async () => {
+  // const res = await axios.get(`https://notion-cs-content.onrender.com/users`);
+  const results = data.results;
+  const theOutput = results.map((pager: any) => {
+    return {
+      id: pager.id,
+      tags: pager.tags.map((tag: any) => tag.name),
+    };
+  });
+
+  return theOutput[0];
+};
+
+function App() {
+  const [count, setCount] = useState(0);
+  const [myObj, setMyObj] = useState({});
+
+  // axios
+  //   .get(`https://notion-cs-content.onrender.com/users`)
+  //   .then((res) => {
+  //     setMyObj(res);
+  //   })
+  //   .then(console.log(myObj);
+  // alert("BRO"))
+  //   .catch();
+  // const sourceToParse =
+  let testMe = broFunc();
+  console.log(testMe);
+  let sourceToParse =
+    '[{"text":"dance","value":2},{"text":"never","value":4},{"text":"this","value":2},{"text":"that","value":2}]';
+  // const parseStringifiedDataProof = JSON.parse(JSON.stringify(altWords));
+  // let parseStringifiedDataProof = JSON.parse(JSON.stringify(altWords));
+
+  const options = {
+    colors: ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b"],
+    enableTooltip: true,
+    deterministic: false,
+    fontFamily: "impact",
+    fontSizes: [5, 60],
+    fontStyle: "normal",
+    fontWeight: "normal",
+    padding: 1,
+    rotations: 3,
+    rotationAngles: [0, 90],
+    scale: "sqrt",
+    spiral: "archimedean",
+    transitionDuration: 1000,
+  };
+
+  return (
+    <>
+      <div>
+        <h2>Word Cloud!</h2>
+        {/* <div style={{ height: 400, width: 600 }}>
+          <ReactWordcloud options={options} words={parseStringifiedDataProof} />
+        </div> */}
+      </div>
+    </>
+  );
+}
+
+export default App;
