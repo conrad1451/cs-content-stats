@@ -26,15 +26,17 @@ const AxiosOutput = () => {
     <div>
       {pages.map((page) => (
         <>
-          <p>page.name</p>
-          <p>
+          <p>Name: {page.name}:</p>
+          <text>
             {page.tags.map((tag) => (
               <>
-                <text>{tag}</text>
-                <text> ___ </text>
+                <text>Tags: {tag + " || "}</text>
+                {/* <text> ___________________________ </text> */}
               </>
             ))}
-          </p>
+          </text>
+          <br />
+          <br />
         </>
       ))}
     </div>

@@ -20,17 +20,33 @@ const ReactWordCloudApp = (props: Props) => {
   //   let parseStringifiedDataProof = JSON.parse(JSON.stringify(altWords));
   //   let parseStringifiedDataProof = JSON.parse(JSON.stringify(props.words));
 
+  let theFontSizes: number[] = [5, 60];
+  let theColors: string[] = [
+    "#1f77b4",
+    "#ff7f0e",
+    "#2ca02c",
+    "#d62728",
+    "#9467bd",
+    "#8c564b",
+  ];
+  // let theRotationAngles: number[] = [0, 90];
+  // let theRotationAngles: number[] = [0, 45, 60];
+  let theRotationAngles: number[] = [0, 45, 90];
+  // let theRotationAngles: number[] = [0, 45, 60, 90];
+
+  // Cannot find name 'OptionsProp'.ts(2304)
+  // const options: OptionsProp = {
   const options = {
-    colors: ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b"],
+    colors: theColors,
     enableTooltip: true,
     deterministic: false,
     fontFamily: "impact",
-    fontSizes: [5, 60],
+    fontSizes: theFontSizes,
     fontStyle: "normal",
     fontWeight: "normal",
     padding: 1,
     rotations: 3,
-    rotationAngles: [0, 90],
+    rotationAngles: theRotationAngles,
     scale: "sqrt",
     spiral: "archimedean",
     transitionDuration: 1000,

@@ -8,6 +8,7 @@
 
 import ReactWordCloudApp from "./WordCloud.tsx";
 import CSNotionPages from "./apis/CSNotionPages.tsx";
+import PagesList from "./PagesList.tsx";
 
 // const { data } = await axios.get(
 //   `https://notion-cs-content.onrender.com/users`
@@ -49,6 +50,7 @@ function App() {
         {/* I'm surprised that the import from the JS file still worked without typesetting */}
         {/* <ReactWordCloudApp height={400} width={600} words={altWords} /> */}
         <CSNotionPages />
+        <PagesList />
         <ReactWordCloudApp height={400} width={600} words={theWords} />
       </div>
     </>
