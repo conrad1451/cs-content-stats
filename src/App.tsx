@@ -34,6 +34,20 @@ import theWords from "./theWords";
 //   return theOutput[0];
 // };
 
+function PageView(key) {
+  switch (key) {
+    case 0:
+      return <ReactWordCloudApp height={400} width={600} words={theWords} />;
+    case 1:
+      return <PagesList />;
+    case 2:
+      return <CSNotionPages />;
+
+    default:
+      return <p>No selection made.</p>;
+  }
+}
+
 function App() {
   // const [count, setCount] = useState(0);
   // const [myObj, setMyObj] = useState({});
@@ -49,9 +63,11 @@ function App() {
         {/* <h2>Word Cloud!</h2> */}
         {/* I'm surprised that the import from the JS file still worked without typesetting */}
         {/* <ReactWordCloudApp height={400} width={600} words={altWords} /> */}
-        <CSNotionPages />
-        <PagesList />
-        <ReactWordCloudApp height={400} width={600} words={theWords} />
+        {/* <CSNotionPages /> */}
+        {/* <PagesList /> */}
+        {/* <ReactWordCloudApp height={400} width={600} words={theWords} /> */}
+        {/* The below worked - Nice! */}
+        {PageView(2)}
       </div>
     </>
   );

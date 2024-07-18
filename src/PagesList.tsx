@@ -34,6 +34,9 @@ function PagesList() {
   //   });
   // }, []);
 
+  console.log("Here is is");
+  console.log(pages);
+
   return (
     <div>
       {pages.map((page) => (
