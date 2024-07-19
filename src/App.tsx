@@ -67,7 +67,7 @@ function App() {
         {/* <PagesList /> */}
         {/* <ReactWordCloudApp height={400} width={600} words={theWords} /> */}
         {/* The below worked - Nice! */}
-        {PageView(2)}
+        {PageView(0)}
       </div>
     </>
   );
