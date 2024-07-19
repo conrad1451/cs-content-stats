@@ -1,5 +1,5 @@
-// import { useEffect, useState } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+// import { useState } from "react";
 
 import CSPagesRawOutput from "./apis/CSNotionPagesAlt.tsx";
 
@@ -23,8 +23,25 @@ interface Page {
 }
 
 function PagesList() {
+  // const [pages, setPages] = useState(Array<Page>);
+
+  // I return state from CSPages RawOutput, just to useEffect
+  // it to set the state of this and return it. I think
+  // this is causing react to claim that I am using a hook
+  // within a hook in an unauthorized manner
+  // setPages(CSPagesRawOutput);
+
   const [pages, setPages] = useState(Array<Page>);
-  setPages(CSPagesRawOutput);
+
+  useEffect(() => {
+    let testVar = localStorage.getPage("pages");
+    alert(testVar);
+    const pages = JSON.parse(localStorage.getPage("pages"));
+    if (pages) {
+      setPages(pages);
+      console.log(pages);
+    }
+  }, []);
 
   // const [count, setCount] = useState(0);
   // const [myObj, setMyObj] = useState({});
@@ -36,26 +53,26 @@ function PagesList() {
 
   console.log("Here is is");
   console.log(pages);
-
-  return (
-    <div>
-      {pages.map((page) => (
-        <>
-          <p>Name: {page.name}:</p>
-          <text>
-            {page.tags.map((tag) => (
-              <>
-                <text>Tags: {tag + " || "}</text>
-                {/* <text> ___________________________ </text> */}
-              </>
-            ))}
-          </text>
-          <br />
-          <br />
-        </>
-      ))}
-    </div>
-  );
+  return pages;
+  // return (
+  //   <div>
+  //     {pages.map((page) => (
+  //       <>
+  //         <p>Name: {page.name}:</p>
+  //         <text>
+  //           {page.tags.map((tag) => (
+  //             <>
+  //               <text>Tags: {tag + " || "}</text>
+  //               {/* <text> ___________________________ </text> */}
+  //             </>
+  //           ))}
+  //         </text>
+  //         <br />
+  //         <br />
+  //       </>
+  //     ))}
+  //   </div>
+  // );
 }
 
 export default PagesList;

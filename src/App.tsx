@@ -3,11 +3,13 @@
 // [2]: https://www.squash.io/passing-parameters-to-components-in-reactjs-with-typescript/
 
 // import { useEffect, useState } from "react";
+import { useState } from "react";
 // import ReactWordcloud from "react-wordcloud";
 // import axios from "axios";
 
 import ReactWordCloudApp from "./WordCloud.tsx";
 import CSNotionPages from "./apis/CSNotionPages.tsx";
+import CSNotionPagesData from "./apis/CSNotionPagesData.tsx";
 import PagesList from "./PagesList.tsx";
 
 // const { data } = await axios.get(
@@ -39,7 +41,7 @@ function PageView(key) {
     case 0:
       return <ReactWordCloudApp height={400} width={600} words={theWords} />;
     case 1:
-      return <PagesList />;
+      return <CSNotionPagesData />;
     case 2:
       return <CSNotionPages />;
 
@@ -51,11 +53,16 @@ function PageView(key) {
 function App() {
   // const [count, setCount] = useState(0);
   // const [myObj, setMyObj] = useState({});
-  // useEffect(() => {
-  //   axios.get(`https://notion-cs-content.onrender.com/users`).then((res) => {
-  //     setMyObj(res);
-  //   });
-  // }, []);
+
+  const [curPage, setCurPage] = useState(0);
+
+  // let numOptions = 2;
+  let numOptions = 3;
+
+  const handlePageChange = (event: any) => {
+    event.preventDefault();
+    setCurPage((curPage + 1) % numOptions);
+  };
 
   return (
     <>
@@ -67,7 +74,10 @@ function App() {
         {/* <PagesList /> */}
         {/* <ReactWordCloudApp height={400} width={600} words={theWords} /> */}
         {/* The below worked - Nice! */}
-        {PageView(0)}
+        {PageView(curPage)}
+        <button type="submit" onClick={handlePageChange}>
+          Change View
+        </button>
       </div>
     </>
   );

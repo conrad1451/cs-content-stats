@@ -21,6 +21,7 @@ const ReactWordCloudApp = (props: Props) => {
   //   let parseStringifiedDataProof = JSON.parse(JSON.stringify(props.words));
 
   // let theFontSizes: number[] = [5, 60];
+  // CHQ: I think the format is [min, max]
   let altFontSizes: [number, number] = [5, 60];
   let theColors: string[] = [
     "#1f77b4",
@@ -34,6 +35,7 @@ const ReactWordCloudApp = (props: Props) => {
   // let theRotationAngles: number[] = [0, 45, 60];
 
   // let theRotationAngles: number[] = [0, 45, 90];
+  // CHQ: I think the format is [min, max]
   let altRotationAngles: [number, number] = [0, 90];
 
   // let theRotationAngles: number[] = [0, 45, 60, 90];

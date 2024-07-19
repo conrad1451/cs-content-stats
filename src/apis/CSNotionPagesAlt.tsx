@@ -16,6 +16,7 @@ const CSPagesRawOutput = () => {
       const theData = res.data;
       setPages(theData);
       console.log(pages);
+      localStorage.setPage("pages", JSON.stringify(pages));
     });
   }, []);
 
