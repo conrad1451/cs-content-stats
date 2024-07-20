@@ -10,7 +10,7 @@ import { useState } from "react";
 import ReactWordCloudApp from "./WordCloud.tsx";
 import CSNotionPages from "./apis/CSNotionPages.tsx";
 import CSNotionPagesData from "./apis/CSNotionPagesData.tsx";
-import PagesList from "./PagesList.tsx";
+// import PagesList from "./PagesList.tsx";
 
 // const { data } = await axios.get(
 //   `https://notion-cs-content.onrender.com/users`
@@ -41,10 +41,9 @@ function PageView(key) {
     case 0:
       return <ReactWordCloudApp height={400} width={600} words={theWords} />;
     case 1:
-      return <CSNotionPagesData />;
-    case 2:
       return <CSNotionPages />;
-
+    case 2:
+      return <p>{<CSNotionPagesData />}</p>;
     default:
       return <p>No selection made.</p>;
   }
@@ -56,8 +55,8 @@ function App() {
 
   const [curPage, setCurPage] = useState(0);
 
-  // let numOptions = 2;
-  let numOptions = 3;
+  let numOptions = 2;
+  // let numOptions = 3;
 
   const handlePageChange = (event: any) => {
     event.preventDefault();

@@ -11,7 +11,7 @@ interface Page {
   tags: string[];
 }
 
-const AxiosOutput = () => {
+const CSNotionPages = () => {
   const [pages, setPages] = useState(Array<Page>);
   useEffect(() => {
     // axios.get(databaseId).then((res) => {
@@ -46,4 +46,4 @@ const AxiosOutput = () => {
   );
 };
 
-export default AxiosOutput;
+export default CSNotionPages;
