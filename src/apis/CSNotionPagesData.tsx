@@ -6,17 +6,17 @@ import axios from "axios";
 
 // const databaseId = process.env.CS_CONTENT;
 
-let tagList = {};
+// let tagList = {};
 
 // const theTagList: Record<string, number>;
-let theTagList: Record<string, number>;
+// let theTagList: Record<string, number>;
 
 let theOtherTagList: Map<string, number> = new Map();
 
-interface Page {
-  name: string;
-  tags: string[];
-}
+// interface Page {
+//   name: string;
+//   tags: string[];
+// }
 
 // const PagesInfoOld = () => {
 //   const [pages, setPages] = useState(Array<Page>);
@@ -68,6 +68,7 @@ const PagesInfo = () => {
       // const lastData: Map<string, number> = JSON.parse(JSON.stringify(theOtherTagList));
       // setTagList(lastData);
       setTagList(JSON.parse(JSON.stringify(theOtherTagList)));
+      console.log(tagList);
     });
   }, []);
 

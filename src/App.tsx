@@ -9,7 +9,7 @@ import { useState } from "react";
 
 import ReactWordCloudApp from "./WordCloud.tsx";
 import CSNotionPages from "./apis/CSNotionPages.tsx";
-import CSNotionPagesData from "./apis/CSNotionPagesData.tsx";
+// import CSNotionPagesData from "./apis/CSNotionPagesData.tsx";
 // import PagesList from "./PagesList.tsx";
 
 // const { data } = await axios.get(
@@ -43,7 +43,7 @@ function PageView(key) {
     case 1:
       return <CSNotionPages />;
     case 2:
-      return <p>{<CSNotionPagesData />}</p>;
+    // return <p>{<CSNotionPagesData />}</p>;
     default:
       return <p>No selection made.</p>;
   }
