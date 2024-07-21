@@ -9,8 +9,15 @@ import { useState } from "react";
 
 import ReactWordCloudApp from "./WordCloud.tsx";
 import CSNotionPages from "./apis/CSNotionPages.tsx";
+// import CSNotionPagesV2 from "./apis/CSNotionPagesV2.tsx";
+// import CSNotionPagesV3 from "./apis/CSNotionCloudDataCoexist.tsx";
 // import CSNotionPagesData from "./apis/CSNotionPagesData.tsx";
 // import PagesList from "./PagesList.tsx";
+
+// import PagesInfo from "./moduleapi.ts";
+// import PagesInfo2 from "./ModuleAgain.tsx";
+
+// import TheTable from "./Table/NewTable/App";
 
 // const { data } = await axios.get(
 //   `https://notion-cs-content.onrender.com/users`
@@ -36,16 +43,80 @@ import theWords from "./theWords";
 //   return theOutput[0];
 // };
 
+// return <ReactWordCloudApp height={400} width={600} words={realTagList} />;
+let theListOfOptions: Object[] = [
+  {
+    header: [["line2", "Some"]],
+    body: [
+      ["line10", "Some text"],
+      ["line11", "Some text"],
+      ["line12", "Some text"],
+    ],
+  },
+  {
+    header: [
+      [
+        "line2",
+        "Some text",
+        "Some text",
+        "Some text Some text Some text Some text Some text",
+      ],
+    ],
+    body: [
+      [
+        "line10",
+        "Some text",
+        "Some text",
+        "Some text Some text Some text Some text Some text",
+      ],
+      [
+        "line11",
+        "Some text",
+        "Some text",
+        "Some text Some text Some text Some text Some text",
+      ],
+      [
+        "line12",
+        "Some text",
+        "Some text",
+        "Some text Some text Some text Some text Some text",
+      ],
+    ],
+  },
+];
+let theOptionNames: string[] = ["filler 1", "filler 2"];
+
 function PageView(key) {
   switch (key) {
     case 0:
       return <ReactWordCloudApp height={400} width={600} words={theWords} />;
+    // return <>{PagesInfo()}</>;
     case 1:
       return <CSNotionPages />;
+
+    // return <p>{"PagesInfo2"}</p>;
+
     case 2:
-    // return <p>{<CSNotionPagesData />}</p>;
+      // return (
+      //   <TheTable
+      //     {...{
+      //       theTableDatasets: {
+      //         data: theListOfOptions,
+      //       },
+      //       theTablePageTitles: {
+      //         data: theOptionNames,
+      //       },
+      //     }}
+      //   />
+      // );
+      return <p>{"PagesInfo2"}</p>;
+
+    // case 3:
+    // return <p>{"PagesInfo2"}</p>;
+    // return <p>{<PagesInfo2 />}</p>;
     default:
       return <p>No selection made.</p>;
+    // return <ReactWordCloudApp height={400} width={600} words={theWords} />;
   }
 }
 
@@ -55,8 +126,8 @@ function App() {
 
   const [curPage, setCurPage] = useState(0);
 
-  let numOptions = 2;
-  // let numOptions = 3;
+  // let numOptions = 2;
+  const numOptions = 3;
 
   const handlePageChange = (event: any) => {
     event.preventDefault();
