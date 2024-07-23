@@ -15,6 +15,7 @@ import CSNotionPages from "./apis/CSNotionPages.tsx";
 // const { data } = await axios.get(
 //   `https://notion-cs-content.onrender.com/users`
 // );
+import TheTable from "./Table/NewTable/App";
 
 // const axios = require('axios');
 
@@ -22,6 +23,47 @@ import "./App.css";
 
 // import altWords from "./altWords";
 import theWords from "./theWords";
+
+let theListOfOptions: Object[] = [
+  {
+    header: [["line2", "Some"]],
+    body: [
+      ["line10", "Some text"],
+      ["line11", "Some text"],
+      ["line12", "Some text"],
+    ],
+  },
+  {
+    header: [
+      [
+        "line2",
+        "Some text",
+        "Some text",
+        "Some text Some text Some text Some text Some text",
+      ],
+    ],
+    body: [
+      [
+        "line10",
+        "Some text",
+        "Some text",
+        "Some text Some text Some text Some text Some text",
+      ],
+      [
+        "line11",
+        "Some text",
+        "Some text",
+        "Some text Some text Some text Some text Some text",
+      ],
+      [
+        "line12",
+        "Some text",
+        "Some text",
+        "Some text Some text Some text Some text Some text",
+      ],
+    ],
+  },
+];
 
 // const broFunc = async () => {
 //   // const res = await axios.get(`https://notion-cs-content.onrender.com/users`);
@@ -43,7 +85,16 @@ function PageView(key) {
     case 1:
       return <CSNotionPages />;
     case 2:
-    // return <p>{<CSNotionPagesData />}</p>;
+      // return <p>{<CSNotionPagesData />}</p>;
+      return (
+        <TheTable
+          {...{
+            theTableDatasets: {
+              data: theListOfOptions,
+            },
+          }}
+        />
+      );
     default:
       return <p>No selection made.</p>;
   }

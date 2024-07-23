@@ -13,7 +13,9 @@
     "axios": "1.7.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-wordcloud": "1.2.7"
+    "react-to-print": "^2.15.1",
+    "react-wordcloud": "1.2.7",
+    "sass": "^1.77.8"
   },
   "devDependencies": {
     "@types/react": "^18.2.65",
