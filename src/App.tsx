@@ -12,8 +12,9 @@ import CSNotionPages from "./apis/CSNotionPages.tsx";
 // import CSNotionPagesData from "./apis/CSNotionPagesData.tsx";
 // import PagesList from "./PagesList.tsx";
 
+// CHQ: Perhaps I should try the below line, it might work.
 // const { data } = await axios.get(
-//   `https://notion-cs-content.onrender.com/users`
+//   `https://notion-cs-content.onrender.com/pages`
 // );
 
 // const axios = require('axios');
