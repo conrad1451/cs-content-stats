@@ -18,7 +18,7 @@ let myData: WordFrequencies[] = [
   },
   {
     text: "rad",
-    value: 1170,
+    value: 11,
   },
   {
     text: "correct",
