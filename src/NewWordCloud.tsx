@@ -7,8 +7,8 @@ import "./App.css";
 type WordFrequencies = {
   text: string;
   value: number;
-};
- 
+};  
+  
 type Props = {
   height: number;
   width: number;
